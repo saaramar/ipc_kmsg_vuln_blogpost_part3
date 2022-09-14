@@ -562,7 +562,7 @@ So, no - 7 arguments does not give us a good message size.
 
 This is the last blogpost in this series. As I've said before (many times), my goal here was to spread knowledge and help security researchers better understand some fundamentals of iOS/macOS internals. I hope blogposts helped in doing so.
 
-The code is in [this](https://github.com/saaramar/ipc_kmsg_vuln_blogpost_part3) repo. It leaks `kmsg->ikm_signature` and triggers the "ikm_validate_sig: full signature mismatch" panic.
+The code is in [this](https://github.com/saaramar/ipc_kmsg_vuln_blogpost_part3) repo. It leaks `kmsg->ikm_signature` and triggers the "*ikm_validate_sig: full signature mismatch*" panic.
 
 
 
