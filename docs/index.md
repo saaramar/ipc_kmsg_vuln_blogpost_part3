@@ -478,7 +478,7 @@ Just to verify everything, let's see this in action. Of course, we need to make 
 
 However, Instead of building all that, we can check if this number of arguments will create a good message size for us. At this point, we are very familiar with the memory layout, the structures, and the offsets. And we already have a POC that triggers `IOUserClient::sendAsyncResult64` to our mktimer's port. So - why not simply patch the number of arguments right before the call to `IOUserClient::sendAsyncResult64` in `notify_surface`?
 
-Let's see what happens if we patch it to 7. First, we get into the corrupting memcpy, with `ikm_header` just sitting there, PAC'd, and points to itself:
+Let's see what happens if we patch it to 7. First, we get into the corrupting memcpy, with `ikm_header` just sitting there, PAC'd, and points to one qword before its own offset in the kmsg:
 
 ```
 (lldb) reg read x3
