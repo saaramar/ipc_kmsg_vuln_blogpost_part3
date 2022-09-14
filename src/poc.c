@@ -109,7 +109,7 @@ void *trigger_iosurface_notification(mach_port_t mktimer_port) {
         return NULL;
     }
     
-    printf("peak:\n");
+    printf("peek:\n");
     mach_port_peek_leak(mktimer_port);
 
     printf("recv the message, trigger ikm_validate_sig panic\n");
